@@ -73,18 +73,22 @@ void init_buts(void){
 	pmc_enable_periph_clk(BUT_PIO_ID);
 	pio_set_input(BUT_PIO, BUT_PIO_IDX_MASK, PIO_DEFAULT);
 	pio_pull_up(BUT_PIO, BUT_PIO_IDX_MASK, 1);
+	pio_set_debounce_filter(BUT_PIO, BUT_PIO_IDX_MASK, 60);
 	//BUT1
 	pmc_enable_periph_clk(BUT1_PIO_ID);
 	pio_set_input(BUT1_PIO, BUT1_PIO_IDX_MASK, PIO_DEFAULT);
 	pio_pull_up(BUT1_PIO, BUT1_PIO_IDX_MASK, 1);
+	pio_set_debounce_filter(BUT1_PIO, BUT1_PIO_IDX_MASK, 60);
 	//BUT2
 	pmc_enable_periph_clk(BUT2_PIO_ID);
 	pio_set_input(BUT2_PIO, BUT2_PIO_IDX_MASK, PIO_DEFAULT);
 	pio_pull_up(BUT2_PIO, BUT2_PIO_IDX_MASK, 1);
+	pio_set_debounce_filter(BUT2_PIO, BUT2_PIO_IDX_MASK, 60);
 	//BUT3
 	pmc_enable_periph_clk(BUT3_PIO_ID);
 	pio_set_input(BUT3_PIO, BUT3_PIO_IDX_MASK, PIO_DEFAULT);
 	pio_pull_up(BUT3_PIO, BUT3_PIO_IDX_MASK, 1);
+	pio_set_debounce_filter(BUT3_PIO, BUT3_PIO_IDX_MASK, 60);
 }
 
 int main(void)
