@@ -1,6 +1,6 @@
 /* *
  * Arquivo com inicialização de LEDs
- * 
+ *
  * Defines e configs de:
  *  - Botão embutido
  *  - Botão 1 da placa OLED1
@@ -9,7 +9,7 @@
  *  - Todos juntos
  *
  * OBS: o código só funciona quando na entrada EXT1
- * NÃO ESQUEÇA DE CHAMAR A FUNÇÃO NA MAIN 
+ * NÃO ESQUEÇA DE CHAMAR A FUNÇÃO NA MAIN
  */
 
 /* --- --- --- --- --- --- --- --- --- --- --- --- --- */
@@ -20,13 +20,12 @@
 #define BUT_PIO_IDX 11
 #define BUT_PIO_IDX_MASK (1u << BUT_PIO_IDX)
 
-void init_but_embutido(void){
-  // Config do Botão
-  pmc_enable_periph_clk(BUT_PIO_ID);
-  pio_set_input(BUT_PIO, BUT_PIO_IDX_MASK, PIO_DEFAULT);
-  pio_pull_up(BUT_PIO, BUT_PIO_IDX_MASK, 1);
-  pio_set_debounce_filter(BUT_PIO, BUT_PIO_IDX_MASK, 60);
-
+void init_but_embutido(void) {
+    // Config do Botão
+    pmc_enable_periph_clk(BUT_PIO_ID);
+    pio_set_input(BUT_PIO, BUT_PIO_IDX_MASK, PIO_DEFAULT);
+    pio_pull_up(BUT_PIO, BUT_PIO_IDX_MASK, 1);
+    pio_set_debounce_filter(BUT_PIO, BUT_PIO_IDX_MASK, 60);
 }
 /* --- --- --- --- --- --- --- --- --- --- --- --- --- */
 
@@ -36,12 +35,12 @@ void init_but_embutido(void){
 #define BUT1_PIO_IDX 28
 #define BUT1_PIO_IDX_MASK (1u << BUT1_PIO_IDX)
 
-void init_but1(void){
-  //BUT1
-  pmc_enable_periph_clk(BUT1_PIO_ID);
-  pio_set_input(BUT1_PIO, BUT1_PIO_IDX_MASK, PIO_DEFAULT);
-  pio_pull_up(BUT1_PIO, BUT1_PIO_IDX_MASK, 1);
-  pio_set_debounce_filter(BUT1_PIO, BUT1_PIO_IDX_MASK, 60);
+void init_but1(void) {
+    // BUT1
+    pmc_enable_periph_clk(BUT1_PIO_ID);
+    pio_set_input(BUT1_PIO, BUT1_PIO_IDX_MASK, PIO_DEFAULT);
+    pio_pull_up(BUT1_PIO, BUT1_PIO_IDX_MASK, 1);
+    pio_set_debounce_filter(BUT1_PIO, BUT1_PIO_IDX_MASK, 60);
 }
 /* --- --- --- --- --- --- --- --- --- --- --- --- --- */
 
@@ -51,12 +50,12 @@ void init_but1(void){
 #define BUT2_PIO_IDX 31
 #define BUT2_PIO_IDX_MASK (1u << BUT2_PIO_IDX)
 
-void init_but2(void){
-  //BUT2
-  pmc_enable_periph_clk(BUT2_PIO_ID);
-  pio_set_input(BUT2_PIO, BUT2_PIO_IDX_MASK, PIO_DEFAULT);
-  pio_pull_up(BUT2_PIO, BUT2_PIO_IDX_MASK, 1);
-  pio_set_debounce_filter(BUT2_PIO, BUT2_PIO_IDX_MASK, 60);
+void init_but2(void) {
+    // BUT2
+    pmc_enable_periph_clk(BUT2_PIO_ID);
+    pio_set_input(BUT2_PIO, BUT2_PIO_IDX_MASK, PIO_DEFAULT);
+    pio_pull_up(BUT2_PIO, BUT2_PIO_IDX_MASK, 1);
+    pio_set_debounce_filter(BUT2_PIO, BUT2_PIO_IDX_MASK, 60);
 }
 /* --- --- --- --- --- --- --- --- --- --- --- --- --- */
 
@@ -66,12 +65,12 @@ void init_but2(void){
 #define BUT3_PIO_IDX 19
 #define BUT3_PIO_IDX_MASK (1u << BUT3_PIO_IDX)
 
-void init_but3(void){
-  //BUT3
-  pmc_enable_periph_clk(BUT3_PIO_ID);
-  pio_set_input(BUT3_PIO, BUT3_PIO_IDX_MASK, PIO_DEFAULT);
-  pio_pull_up(BUT3_PIO, BUT3_PIO_IDX_MASK, 1);
-  pio_set_debounce_filter(BUT3_PIO, BUT3_PIO_IDX_MASK, 60);
+void init_but3(void) {
+    // BUT3
+    pmc_enable_periph_clk(BUT3_PIO_ID);
+    pio_set_input(BUT3_PIO, BUT3_PIO_IDX_MASK, PIO_DEFAULT);
+    pio_pull_up(BUT3_PIO, BUT3_PIO_IDX_MASK, 1);
+    pio_set_debounce_filter(BUT3_PIO, BUT3_PIO_IDX_MASK, 60);
 }
 /* --- --- --- --- --- --- --- --- --- --- --- --- --- */
 
@@ -96,26 +95,35 @@ void init_but3(void){
 #define BUT3_PIO_IDX 19
 #define BUT3_PIO_IDX_MASK (1u << BUT3_PIO_IDX)
 
-void init_buts(void){
-  // Config do Botão
-  pmc_enable_periph_clk(BUT_PIO_ID);
-  pio_set_input(BUT_PIO, BUT_PIO_IDX_MASK, PIO_DEFAULT);
-  pio_pull_up(BUT_PIO, BUT_PIO_IDX_MASK, 1);
-  pio_set_debounce_filter(BUT_PIO, BUT_PIO_IDX_MASK, 60);
-  //BUT1
-  pmc_enable_periph_clk(BUT1_PIO_ID);
-  pio_set_input(BUT1_PIO, BUT1_PIO_IDX_MASK, PIO_DEFAULT);
-  pio_pull_up(BUT1_PIO, BUT1_PIO_IDX_MASK, 1);
-  pio_set_debounce_filter(BUT1_PIO, BUT1_PIO_IDX_MASK, 60);
-  //BUT2
-  pmc_enable_periph_clk(BUT2_PIO_ID);
-  pio_set_input(BUT2_PIO, BUT2_PIO_IDX_MASK, PIO_DEFAULT);
-  pio_pull_up(BUT2_PIO, BUT2_PIO_IDX_MASK, 1);
-  pio_set_debounce_filter(BUT2_PIO, BUT2_PIO_IDX_MASK, 60);
-  //BUT3
-  pmc_enable_periph_clk(BUT3_PIO_ID);
-  pio_set_input(BUT3_PIO, BUT3_PIO_IDX_MASK, PIO_DEFAULT);
-  pio_pull_up(BUT3_PIO, BUT3_PIO_IDX_MASK, 1);
-  pio_set_debounce_filter(BUT3_PIO, BUT3_PIO_IDX_MASK, 60);
+void init_buts(void) {
+    // Config do Botão
+    pmc_enable_periph_clk(BUT_PIO_ID);
+    pio_set_input(BUT_PIO, BUT_PIO_IDX_MASK, PIO_DEFAULT);
+    pio_pull_up(BUT_PIO, BUT_PIO_IDX_MASK, 1);
+    pio_set_debounce_filter(BUT_PIO, BUT_PIO_IDX_MASK, 60);
+    // BUT1
+    pmc_enable_periph_clk(BUT1_PIO_ID);
+    pio_set_input(BUT1_PIO, BUT1_PIO_IDX_MASK, PIO_DEFAULT);
+    pio_pull_up(BUT1_PIO, BUT1_PIO_IDX_MASK, 1);
+    pio_set_debounce_filter(BUT1_PIO, BUT1_PIO_IDX_MASK, 60);
+    // BUT2
+    pmc_enable_periph_clk(BUT2_PIO_ID);
+    pio_set_input(BUT2_PIO, BUT2_PIO_IDX_MASK, PIO_DEFAULT);
+    pio_pull_up(BUT2_PIO, BUT2_PIO_IDX_MASK, 1);
+    pio_set_debounce_filter(BUT2_PIO, BUT2_PIO_IDX_MASK, 60);
+    // BUT3
+    pmc_enable_periph_clk(BUT3_PIO_ID);
+    pio_set_input(BUT3_PIO, BUT3_PIO_IDX_MASK, PIO_DEFAULT);
+    pio_pull_up(BUT3_PIO, BUT3_PIO_IDX_MASK, 1);
+    pio_set_debounce_filter(BUT3_PIO, BUT3_PIO_IDX_MASK, 60);
+}
 
+/* --- --- --- --- --- --- --- --- --- --- --- --- --- */
+
+void init_but(Pio *pio, uint32_t id, uint32_t mask) {
+    // Config do Botão
+    pmc_enable_periph_clk(id);
+    pio_set_input(pio, mask, PIO_DEFAULT);
+    pio_pull_up(pio, mask, 1);
+    pio_set_debounce_filter(pio, mask, 60);
 }

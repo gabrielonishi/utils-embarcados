@@ -1,3 +1,13 @@
+/* *
+ * Arquivo baseado no Lab. 1 de Embarcados
+ * 
+ * Acende e apaga os LEDs da placa de acordo com os
+ * botões apertados
+ * 
+ * Trechos de código retirados do Nick (Nicolas Queiroga)
+ * com a permissão dele
+ */
+
 #include "asf.h"
 
 // Config dos LEDs
