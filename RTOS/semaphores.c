@@ -4,8 +4,13 @@
 SemaphoreHandle_t xSemaphore;
 
 /* 2. Criar o semáforo na main */
-xSemaphoreCreateBinary();
+xSemaphore = xSemaphoreCreateBinary();
 
+if (xSemaphore == NULL) {
+    printf("Falha em criar xSemaphore \n");
+} else {
+    printf("xSemaphore criado \n");
+}
 /* Para liberar um semáforo */
 
 // Se for liberado de uma função de callback (ISR)
@@ -16,10 +21,8 @@ xSemaphoreGive(xSemaphore);
 /* Para esperar pelo semáforo */
 if (xSemaphoreTake(xSemaphore, 500 / portTICK_PERIOD_MS) == pdTRUE)
 
-    /* -----------------------CÓDIGO EXEMPLO-----------------------*/
-    // CÓDIGO EXEMPLO
-
-    SemaphoreHandle_t xSemaphore;
+/* -----------------------CÓDIGO EXEMPLO-----------------------*/
+// CÓDIGO EXEMPLO
 
 void but_callback(void) {
     // libera semáforo

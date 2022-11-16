@@ -1,5 +1,6 @@
 {
   "files.associations": {
-    "asf.h": "c"
+    "asf.h": "c",
+    "gfx_mono_text.h": "c"
   }
 }
